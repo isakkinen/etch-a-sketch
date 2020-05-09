@@ -13,6 +13,12 @@ function clearGrid(e) {
     initGrid(newBoardSize, newBoardSize, 960, 960);
 }
 
+/**Creates a grid to be sketched on with given measures
+ * @param gridColumns number of columns in the grid
+ * @param gridRows number of rows in the grid
+ * @param containerWidth width of the sketching area on page
+ * @param containerHeight height of the sketching area on page
+ */
 function initGrid(gridColumns = 16, gridRows = 16,
     containerWidth = 100, containerHeight = 100) {
     const gridContainer = document.querySelector("#grid-container");
@@ -23,6 +29,7 @@ function initGrid(gridColumns = 16, gridRows = 16,
             const newGrid = document.createElement("div");
             newGrid.style.width = `${containerWidth/gridColumns}px`;
             newGrid.style.height = `${containerHeight/gridRows}px`;
+            newGrid.style.backgroundColor = "#FFFFFF";
             newGrid.addEventListener("mouseover", fillGrid);
             newGrid.id = `grid${j}-${i}`;
             gridContainer.appendChild(newGrid);
@@ -30,8 +37,23 @@ function initGrid(gridColumns = 16, gridRows = 16,
     }
 }
 
+/**Fills grid by adding 10% of black color to it */
 function fillGrid(e) {
-    e.target.classList.add("filled");
+    const oldColor = e.target.style.backgroundColor;
+    const rgb = parseRGB(oldColor);
+    rgb[0] -= 255/10;
+    rgb[1] -= 255/10;
+    rgb[2] -= 255/10;
+    const newRgb = `rgb(${rgb})`;
+    e.target.style.backgroundColor = newRgb;
+}
+
+/**Takes a CSS style rgb-value and parses it in to an array
+ * @param rgb CSS style rgb-value
+ * @return Array with R, G, and B in their own indices
+ */
+function parseRGB(rgb) {
+    return (rgb.substring(rgb.indexOf("(")+1, rgb.indexOf(")"))).split(",");
 }
 
 initGrid(16,16, 960,960);
