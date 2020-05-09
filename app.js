@@ -7,10 +7,15 @@ function initGrid(containerWidth = 16, containerHeight = 16,
             const newGrid = document.createElement("div");
             newGrid.style.width = `${gridWidth}px`;
             newGrid.style.height = `${gridHeight}px`;
+            newGrid.addEventListener("mouseover", fillGrid);
             newGrid.id = `grid${j}-${i}`;
             gridContainer.appendChild(newGrid);
         }
     }
+}
+
+function fillGrid(e) {
+    e.target.classList.add("filled");
 }
 
 initGrid(16,16, 32,32);

@@ -3,3 +3,7 @@
     justify-items: center;
     align-items: center;
 }
+
+.filled {
+    background-color: blue;
+}
