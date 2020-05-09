@@ -1,5 +1,5 @@
 /*Globals*/
-const boardSize = 800;
+const boardSize = 600;
 
 /*-------*/
 
