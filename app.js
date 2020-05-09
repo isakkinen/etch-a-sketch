@@ -1,3 +1,8 @@
+/*Globals*/
+const boardSize = 800;
+
+/*-------*/
+
 const clearBtn = document.querySelector("button");
 clearBtn.addEventListener("click", clearGrid);
 
@@ -9,8 +14,8 @@ function clearGrid(e) {
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.firstChild);
     }
-    const newBoardSize = prompt("Please input how many grids you want the board to consist of:");
-    initGrid(newBoardSize, newBoardSize, 960, 960);
+    const newBoardSize = prompt("Please input how many grids you want the board to consist of:", 16);
+    initGrid(newBoardSize, newBoardSize, boardSize, boardSize);
 }
 
 /**Creates a grid to be sketched on with given measures
@@ -56,4 +61,4 @@ function parseRGB(rgb) {
     return (rgb.substring(rgb.indexOf("(")+1, rgb.indexOf(")"))).split(",");
 }
 
-initGrid(16,16, 960,960);
+initGrid(16,16, boardSize,boardSize);
