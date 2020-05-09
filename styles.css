@@ -68,6 +68,10 @@ button:focus {
     border: solid 1px beige;
 }
 
+.grid {
+    border: solid 1px beige;
+}
+
 .filled {
     background-color: blue;
 }

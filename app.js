@@ -33,6 +33,7 @@ function initGrid(gridColumns = 16, gridRows = 16,
     for (let i = 0; i < gridRows; ++i) {
         for (let j = 0; j < gridColumns; ++j) {
             const newGrid = document.createElement("div");
+            newGrid.classList.add("grid");
             newGrid.style.width = `${containerWidth/gridColumns}px`;
             newGrid.style.height = `${containerHeight/gridRows}px`;
             newGrid.style.backgroundColor = "#FFFFFF";
