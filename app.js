@@ -10,7 +10,7 @@ clearBtn.addEventListener("click", clearGrid);
  * user to give new resolution to the grid area
  */
 function clearGrid(e) {
-    const newBoardSize = prompt("Please input how many grids you want the board to consist of:", 16);
+    const newBoardSize = prompt("Please input the resolution you want the sketching area to be:", 16);
     if (!newBoardSize) {return;}
     const gridContainer = document.querySelector("#grid-container");
     while (gridContainer.firstChild) {
