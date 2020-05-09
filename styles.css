@@ -1,7 +1,71 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    background-attachment: scroll;
+    background: linear-gradient(180deg, #ffffdd, rgb(230, 215, 144));
+}
+
+h1 {
+    align-self: center;
+    color: #493b1e;
+    margin-bottom: -0.1em;
+}
+
+footer {
+    display:flex;
+    align-content: center;
+    background-color:#dabd7f;
+    padding: 0.5em 0 0.5em 0;
+}
+
+footer div {
+    padding-left: 1em;
+    color: #493b1e;
+}
+
+button {
+    align-self: center;
+    padding: 0.5em;
+    font-size: 20px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border: solid 2px #dddddd;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background-color: #f9f9f9;
+    color: #AAAAAA;
+    box-shadow: rgb(0, 0, 0) 0px 3px 10px -5px;
+}
+
+button:hover {
+    background-color: #ffe3a6;
+    border-color: #b19965;
+    color: #7c673a;
+    box-shadow: brown 0px 3px 10px -5px;
+}
+
+button:focus {
+    outline: none;
+}
+
+#grid-base {
+    align-self: center;
+    padding: 1em;
+    margin: 1em;
+    background: wheat;
+    border-radius: 10px;
+    box-shadow: brown 0px 0px 20px -10px;
+}
+
 #grid-container {
+    align-self: center;
     display: grid;
     justify-items: center;
     align-items: center;
+    border: solid 1px beige;
 }
 
 .filled {
